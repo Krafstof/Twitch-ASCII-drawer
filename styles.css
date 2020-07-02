@@ -6,7 +6,7 @@ table {
   border-collapse: collapse;
 }
 
-button{
+/*button{
   color: #e6e6ea;
   font-weight: bold;
   height: 30px;
@@ -15,6 +15,14 @@ button{
   border-radius: 5px;
   position: absolute;
   top: 710px;
+}*/
+
+button{
+
+ position: absolute;
+    height: 30px;
+  width: 60px;
+  
 }
 td {
   width: 30px;
@@ -27,7 +35,7 @@ body{
 }
 
 .container{
-  width: 1200px;
+  width: 1160px;
   position: absolute;
   top: 50px;
   left: 50px;
@@ -38,27 +46,37 @@ body{
   right: 0;
   top: 0;
   height: 700px;
+  width: 280px;
   background-color: #18181b;
   color: #efeff1;
+  resize: none;
+  font-family: Roobert,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 #clear-button{
-  background-color: #bf0a59;
-  right: 170px;
+  position: absolute;
+  left: 910px;
+  bottom: 95px;
 }
 #copy-button{
-  right: 0;
+  position: absolute;
+  left: 1100px;
+  bottom: 95px;
 }
 
 #create-button{
-  right:65px;
+  position: absolute;
+  left: 910px;
+  bottom: 95px;
 }
 
 #logo{
   width: 65px;
-  margin-top: 25px;
-  margin-left: 25px;
+  left: 25px;
+  bottom: 25px;
   border-radius: 100px;
+  position: absolute;
+  top: 820px;
 }
 
 #title{
