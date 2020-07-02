@@ -114,8 +114,8 @@ function fillSquareDown () {
         this.setAttribute("style", `background-color: #0e0e10`);
         this.setAttribute("id", `${this.id.slice(0,4)}b`)
         console.log(this.id);
-        lastCell = this.id
+        lastCell = this.id;
         
     }
-}
+    }
 }
