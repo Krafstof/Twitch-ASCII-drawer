@@ -36,32 +36,67 @@ copy_butt.onclick = () =>{
     document.execCommand("copy")
 }
 
+let isDrawing = false
+let lastCell = ""
+
+
 function makeGrid() {
     for (let r=0; r<16; r++){
         const row = canvas.insertRow(r);
         for (let c=0; c<29; c++){
             const cell = row.insertCell(c);
             cell.setAttribute("id", `h${r}l${c}b`)
-            cell.addEventListener("click", fillSquare);
+            cell.addEventListener("mouseover", fillSquareDown);
+            cell.addEventListener('mousedown', e => {
+                isDrawing = true;
+              });
+            cell.addEventListener('click', fillSquareClick)
         }
-    }
-}
+
+  canvas.addEventListener('mouseup', e => {
+    isDrawing = false;
+  });
 
 function clearGrid(){
     while (canvas.firstChild){
          canvas.removeChild(canvas.firstChild);
+         document.getElementById('result').innerHTML=""
     }
 }
 
-function fillSquare () {
+function fillSquareClick () {
+    
     if (this.id.indexOf('b')!=-1){
         this.setAttribute("style", `background-color: #FFFFFF`);
         this.setAttribute("id", `${this.id.slice(0,4)}w`)
         console.log(this.id);
+        
     }
     else if (this.id.indexOf('w')!=-1){
         this.setAttribute("style", `background-color: #0e0e10`);
         this.setAttribute("id", `${this.id.slice(0,4)}b`)
         console.log(this.id);
+        
     }
+}
+
+
+function fillSquareDown () {
+    
+    if (isDrawing && this.id!=lastCell){
+    if (this.id.indexOf('b')!=-1){
+        this.setAttribute("style", `background-color: #FFFFFF`);
+        this.setAttribute("id", `${this.id.slice(0,4)}w`)
+        console.log(this.id);
+        lastCell = this.id
+        
+    }
+    else if (this.id.indexOf('w')!=-1){
+        this.setAttribute("style", `background-color: #0e0e10`);
+        this.setAttribute("id", `${this.id.slice(0,4)}b`)
+        console.log(this.id);
+        lastCell = this.id
+        
+    }
+}
 }
