@@ -52,6 +52,25 @@ function makeGrid() {
               });
             cell.addEventListener('click', fillSquareClick)
         }
+        /*let blankCanvas = ""
+        for (let row of canvas.rows){
+            for (let cell of row.cells){
+                if (cell.id.indexOf('b')!=-1){
+                    res+="░"
+                }else res+="█"
+            }
+            res+="\n"
+        }
+        console.log(blankCanvas);
+        document.getElementById('result').innerHTML=blankCanvas*/
+    }
+}
+
+
+
+/*canvas.addEventListener('mousedown', e => {
+    isDrawing = true;
+  });*/
 
   canvas.addEventListener('mouseup', e => {
     isDrawing = false;
